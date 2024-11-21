@@ -46,15 +46,20 @@ clock = pygame.time.Clock()
 
 # Ball data
 num_balls = 2
-positions = np.random.rand(num_balls * 2).astype(np.float32) * [canvas_width, canvas_height]
-velocities = (np.random.rand(num_balls * 2).astype(np.float32) - 0.5) * 400  # Random velocities
+# Initialize positions with separate x and y values
+positions = np.zeros(num_balls * 2, dtype=np.float32)
+positions[::2] = np.random.rand(num_balls).astype(np.float32) * canvas_width  # x positions
+positions[1::2] = np.random.rand(num_balls).astype(np.float32) * canvas_height  # y positions
+
+
+velocities = (np.random.rand(num_balls * 2).astype(np.float32) - 0.5) * 40000  # Random velocities
 
 # Create OpenCL buffers
 positions_buf = cl.Buffer(context, cl.mem_flags.READ_WRITE | cl.mem_flags.COPY_HOST_PTR, hostbuf=positions)
 velocities_buf = cl.Buffer(context, cl.mem_flags.READ_WRITE | cl.mem_flags.COPY_HOST_PTR, hostbuf=velocities)
 
 # Simulation parameters
-dt = 0.01  # Time step
+dt = 0.001  # Time step
 
 # Main loop
 running = True
