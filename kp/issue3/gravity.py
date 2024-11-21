@@ -69,10 +69,10 @@ particles = [
     Particle(
         random.randint(50, WIDTH - 50),
         random.randint(50, HEIGHT - 50),
-        random.randint(10, 20),
+        random.randint(2, 5),
         random.choice([RED, BLUE, BLACK, GREEN]),
         random.randint(1, 5)
-    ) for _ in range(20)
+    ) for _ in range(800)
 ]
 
 # Main loop
