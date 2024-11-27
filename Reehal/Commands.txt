@@ -1,0 +1,7 @@
+steps
+ create a file in vscode and write data into into
+ go to command prompt
+ git add file_name
+ git commit -a -m "data added to simple file" //or any else comment part
+ git push
+ 
