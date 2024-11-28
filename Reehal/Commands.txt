@@ -1,0 +1,12 @@
+
+ //Commands to add our git account or clone to git cloud
+> git enter(checks whether git is installed or not)
+>git clone git@github.com:Vignana-Jyothi/traffic-experiments.git
+>cd traffic-experiments
+>dir
+//go to github account and create a new main folder(Reehal)
+>cd folder name(Reehal)
+//create a sub file(task.txt)that u need to push inside main folder in vscode
+>git add task.txt
+>git commit -a -m "testing simple file"
+>git push
